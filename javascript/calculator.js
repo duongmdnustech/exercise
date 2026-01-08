@@ -12,7 +12,6 @@ const render = () => {
     ).reduce((acc, curr) => {
         return acc + curr
     }, "")
-    console.log(htmlContent)
 
     document.getElementById("btn-list").innerHTML = htmlContent
 }
