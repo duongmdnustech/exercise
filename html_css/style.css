@@ -1,155 +1,209 @@
-           header,
-           footer {
-               margin: 0;
-               padding: 0;
-               height: 100px;
-               background-color: #171c22;
-               color: #fcfcfc;
-               align-items: center;
-               justify-items: center;
-               display: flex;
-           }
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    scrollbar-width: none;
+    background-image: url(https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_lg_2x/f_auto/primary/xtn2ssecfhdlb9tgonnx);
+    background-repeat: no-repeat;
+}
 
-           header {
-               position: sticky;
-           }
+header, footer {
+    margin: 0;
+    padding: 0;
+    background-color: #171c22;
+    color: #fcfcfc;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
 
-           .badge img {
-               width: 30px;
-           }
+header {
+    position: sticky;
+    top: 0;
+}
 
-           .badge {
-               margin-left: 20px;
-               display: flex;
-               gap: 15px;
-               align-items: center;
-               margin-right: 30vw;
-           }
+.badge img {
+    width: 30px;
+}
 
-           .badge .title {
-               font-size: larger;
-               font-weight: bolder;
-               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-               font-size: 25px;
-            }
+.badge {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
-           .nav-bar {
-               display: flex;
-               gap: 30px;
-               font-weight: bold;
-           }
+.badge .title {
+    font-size: larger;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
 
-           main {
-               height: 100vh;
-               z-index: -1;
-           }
+.nav-bar {
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+    align-items: center;
+}
 
-           main::after {
-            content: attr(data-label);
-           }
+header > .menu {
+    display: none;
+}
 
-           main .content {
-               padding: 20vh 20vw;
-               width: 50vw;
-               color: #161414;
-               display: flex;
-               flex-direction: column;
-               gap: 20px;
-           }
+.nav-bar > div:hover {
+    color: gray;
+    background-color: #fcfcfc;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
 
-           .content .primary {
-               font-weight: bolder;
-               font-size: 40px;
-           }
+main {
+    height: 100vh;
+    z-index: -1;
+}
 
-           .background {
-               width: 100vw;
-               height: calc(100vh - 100px);
-               opacity: 0.6;
-               position: fixed;
-               z-index: -2;
-           }
+main::after {
+    content: attr(data-label);
+}
 
-           .btn-group button:hover {
-               cursor: pointer;
-           }
+main .content {
+    padding: 20vh 20vw;
+    width: 50vw;
+    color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-           .btn-group button {
-               padding: 10px;
-               border-radius: 10px;
-               border: 0px
-           }
+.content .primary {
+    font-weight: bolder;
+    font-size: 40px;
+}
 
-           .btn-group .blue {
-               color: #fcfcfc;
-               background-color: #207dff;
-           }
+.btn-group button:hover {
+    cursor: pointer;
+}
 
-           .btn-group .green {
-               color: #fcfcfc;
-               background-color: #00bd57;
-           }
+.btn-group button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px
+}
 
-           footer {
-               padding: 20px;
-               gap: 5vw;
-               display: flex;
-               position: sticky;
-               bottom: 0;
-           }
+.btn-group button:hover {
+    box-shadow: #000000;
+    opacity: 0.8;
+    font-weight: bold;
+    transform: translateZ(2);
+    transform: translateY(-5px);
+}
 
-           footer .vs {
-               display: flex;
-               gap: 20px;
-               align-items: center;
-           }
+.btn-group .blue {
+    color: #fcfcfc;
+    background-color: #207dff;
+}
 
-           .img-circle {
-               width: 40px;
-               height: 40px;
-               border-radius: 50%;
-           }
+.btn-group .green {
+    color: #fcfcfc;
+    background-color: #00bd57;
+}
 
-           [class*="team"] {
-               display: flex;
-               flex-direction: column;
-               gap: 10px;
-               font-size: 10px;
-               justify-content: center;
-               align-items: center;
-               font-weight: bolder;
-           }
+footer {
+    padding: 20px;
+    gap: 5vw;
+    position: sticky;
+    bottom: 0;
+}
 
-           footer .match {
-               display: flex;
-               flex-direction: column;
-               gap: 10px;
-           }
+footer .vs {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    grid-area: vs;
+}
 
-           footer .match .primary {
-               color: #757a7f;
-               font-weight: bolder;
-           }
+.img-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 
-           footer .timebox {
-               display: inline-flex;
-               flex-direction: row;
-               gap: 20px
-           }
+[class*="team"] {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
 
-           footer .timebox .divider {
-               height: 50px;
-               width: 2px;
-               background-color: #fcfcfc;
-           }
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "vs match timebox button";
+    align-content: center;
+}
 
-           .timebox div .timer {
-               font-weight: bold;
-               font-size: 30px
-           }
+footer .match {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: match;
+}
 
-           @media (width <=900px) {
-               .nav-bar {
-                   display: none;
-               }
-           }
+footer .match .primary {
+    color: #757a7f;
+    font-weight: bolder;
+}
+
+footer .timebox {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 20px;
+    grid-area: timebox;
+}
+
+footer .timebox .divider {
+    height: 50px;
+    width: 2px;
+    background-color: #fcfcfc;
+}
+
+footer > div > .btn-group {
+    grid-area: button;
+}
+
+.timebox div .timer {
+    font-weight: bold;
+    font-size: 30px
+}
+
+@media (width <=900px) {
+    .nav-bar {
+        display: none;
+    }
+
+    header > .menu {
+        display: block;
+        align-items: center;
+        justify-items: center;
+    }
+
+    header > .menu:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "vs match"
+        "timebox button";
+    }
+}
